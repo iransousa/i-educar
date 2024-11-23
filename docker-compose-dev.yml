@@ -21,7 +21,7 @@ services:
     links:
       - php
     ports:
-      - "8095:8095"
+      - "80:8095"
     working_dir: /var/www/ieducar
     volumes:
       - ./:/var/www/ieducar
@@ -31,7 +31,7 @@ services:
     container_name: ieducar-postgres
     image: postgres:16-alpine
     ports:
-      - "5435:5435" 
+      - "5432:5435" 
     environment:
       POSTGRES_DB: ieducar
       POSTGRES_USER: ieducar
@@ -43,7 +43,7 @@ services:
     container_name: ieducar-redis
     image: redis:7-alpine
     ports:
-      - "6391:6391"    
+      - "6379:6391"    
     restart: always
 
 volumes:

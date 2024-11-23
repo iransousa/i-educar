@@ -21,7 +21,7 @@ services:
     links:
       - php
     ports:
-      - "80:8095"
+      - "8095:8095"
     working_dir: /var/www/ieducar
     volumes:
       - ./:/var/www/ieducar

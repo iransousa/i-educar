@@ -20,6 +20,8 @@ services:
     image: nginx:1.26-alpine
     links:
       - php
+    ports:
+      - "80:80"
     working_dir: /var/www/ieducar
     volumes:
       - ./:/var/www/ieducar
@@ -28,6 +30,8 @@ services:
   postgres:
     container_name: ieducar-postgres
     image: postgres:16-alpine
+    ports:
+      - "5432:5432" 
     environment:
       POSTGRES_DB: ieducar
       POSTGRES_USER: ieducar
@@ -38,6 +42,8 @@ services:
   redis:
     container_name: ieducar-redis
     image: redis:7-alpine
+    ports:
+      - "6390:6390"    
     restart: always
 
 volumes:
